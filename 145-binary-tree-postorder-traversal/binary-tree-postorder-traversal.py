@@ -12,5 +12,26 @@ class Solution:
         
         return self.postorderTraversal(root.left) + self.postorderTraversal(root.right) + [root.val]
 
+        # stack(iterative solution)
+
+        stack = [root]
+        visited = [False]
+        res = []
+
+        while stack:
+            curr, v = stack.pop(), visited.pop()
+            if curr:
+                if v:
+                    res.append(curr.val)
+                else:
+                    stack.append(curr)
+                    visited.append(True)
+                    stack.append(curr.right)
+                    visited.append(False)
+                    stack.append(curr.left)
+                    visited.append(False)
+            
+        return res
+
         
         
