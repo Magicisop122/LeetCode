@@ -6,8 +6,33 @@
 #         self.right = right
 class Solution:
     def inorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
-        if root is None:
-            return []
+
+        # recursive solution
+
+        # res = []
+
+        # def inorder(root):
+        #     if root is None:
+        #         return
+        #     inorder(root.left)
+        #     res.append(root.val)
+        #     inorder(root.right)
         
-        return self.inorderTraversal(root.left) + [root.val] + self.inorderTraversal(root.right)
-                
+        # inorder(root)
+        # return res
+     
+        # inorder traversal
+
+        res = []
+        stack = []
+        curr = root
+
+        while stack or curr:
+            while curr:
+                stack.append(curr)
+                curr = curr.left
+            curr = stack.pop()
+            res.append(curr.val)
+            curr = curr.right
+        
+        return res
