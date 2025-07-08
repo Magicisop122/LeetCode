@@ -1,19 +1,19 @@
 class Solution:
     def isPalindrome(self, s: str) -> bool:
 
-        newS = ''.join(c.lower() for c in s if c.isalnum())
+        # newS = ''.join(c.lower() for c in s if c.isalnum())
 
-        def valid(i):
-            if i >= (len(newS) // 2):
+        # def valid(i):
+        #     if i >= (len(newS) // 2):
 
-                return True
+        #         return True
             
-            if newS[i] != newS[len(newS) - i - 1]:
-                return False
+        #     if newS[i] != newS[len(newS) - i - 1]:
+        #         return False
             
-            return valid(i + 1)
+        #     return valid(i + 1)
 
-        return valid(0)
+        # return valid(0)
 
 
 
@@ -25,4 +25,15 @@ class Solution:
 
         # return c == c[::-1]
 
+        newS = ''.join(c.lower() for c in s if c.isalnum())
+
+        l, r = 0, len(newS) - 1
+
+        while l <= r:
+            if newS[l] != newS[r]:
+                return False
+            else:
+                l += 1
+                r -= 1
         
+        return True
