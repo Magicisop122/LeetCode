@@ -1,31 +1,28 @@
 class Solution:
     def isPalindrome(self, s: str) -> bool:
 
-        # def valid(l: int, r: int) -> bool:
-        #     if l >= r:
-        #         return True
+        newS = ''.join(c.lower() for c in s if c.isalnum())
 
-        #     while l < r and not s[l].isalnum():
-        #         l += 1
+        def valid(i):
+            if i >= (len(newS) // 2):
+
+                return True
             
-        #     while l < r and not s[r].isalnum():
-        #         r -= 1
-
-        #     if l >= r:
-        #         return True
-
-        #     if s[l].lower() != s[r].lower():
-        #         return False
+            if newS[i] != newS[len(newS) - i - 1]:
+                return False
             
-        #     return valid(l + 1, r - 1)
+            return valid(i + 1)
 
-        # return valid(0, len(s) - 1)
+        return valid(0)
+
 
 
         #  regex method
 
-        s = s.lower()
+        # s = s.lower()
 
-        c = re.sub(r'[^a-z0-9]', '', s)
+        # c = re.sub(r'[^a-z0-9]', '', s)
 
-        return c == c[::-1]
+        # return c == c[::-1]
+
+        
