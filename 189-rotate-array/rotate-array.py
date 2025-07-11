@@ -3,14 +3,35 @@ class Solution:
         """
         Do not return anything, modify nums in-place instead.
         """
-        n = len(nums)
+        # brute force
+        # n = len(nums)
 
+        # k = k % n
+
+        # temp = nums[-k:]
+
+        # for i in range(n-k-1, -1, -1):
+        #     nums[i + k] = nums[i]
+
+        # for i in range(k):
+        #     nums[i] = temp[i]
+
+        # optimal way by reversing split parts
+
+        n = len(nums)
         k = k % n
 
-        temp = nums[-k:]
+        def rotate(l, r):
+            while l < r:
+                nums[l], nums[r] = nums[r], nums[l]
+                l += 1
+                r -= 1
+        
+        rotate(0, n-k-1)
 
-        for i in range(n-k-1, -1, -1):
-            nums[i + k] = nums[i]
+        rotate(n-k, n-1)
 
-        for i in range(k):
-            nums[i] = temp[i]
+        rotate(0, n-1)
+
+
+        
