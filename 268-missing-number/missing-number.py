@@ -3,9 +3,9 @@ class Solution:
 
         # brute force
 
-        for i in range(len(nums) + 1):
-            if i not in nums:
-                return i
+        # for i in range(len(nums) + 1):
+        #     if i not in nums:
+        #         return i
 
         # better
 
@@ -15,4 +15,11 @@ class Solution:
         #     if i not in hashset:
         #         return i
 
-        
+        # optimal
+
+        n = len(nums)
+        total = n * (n + 1) // 2
+
+        actual_sum = sum(nums)
+
+        return total - actual_sum
