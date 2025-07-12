@@ -17,9 +17,20 @@ class Solution:
 
         # optimal
 
-        n = len(nums)
-        total = n * (n + 1) // 2
+        # sum solution
 
-        actual_sum = sum(nums)
+        # n = len(nums)
+        # total = n * (n + 1) // 2
 
-        return total - actual_sum
+        # actual_sum = sum(nums)
+
+        # return total - actual_sum
+
+        # XOR solution
+
+        res = len(nums)
+
+        for i in range(len(nums)):
+            res += (i - nums[i])
+
+        return res 
