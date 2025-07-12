@@ -3,16 +3,16 @@ class Solution:
 
         # brute force
 
-        # for i in range(len(nums) + 1):
-        #     if i not in nums:
-        #         return i
+        for i in range(len(nums) + 1):
+            if i not in nums:
+                return i
 
         # better
 
-        hashset = set(nums)
+        # hashset = set(nums)
 
-        for i in range(len(nums) + 1):
-            if i not in hashset:
-                return i
+        # for i in range(len(nums) + 1):
+        #     if i not in hashset:
+        #         return i
 
         
