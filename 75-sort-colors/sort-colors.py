@@ -3,6 +3,8 @@ class Solution:
         """
         Do not return anything, modify nums in-place instead.
         """
+
+        # better solution than brute force
         cnt0 = 0
         cnt1 = 0
         cnt2 = 0
