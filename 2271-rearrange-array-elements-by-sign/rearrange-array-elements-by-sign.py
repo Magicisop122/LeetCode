@@ -4,7 +4,7 @@ class Solution:
         neg = [n for n in nums if n < 0]
         res = []
 
-        for i in range(len(pos)):
+        for i in range(len(neg)):
             res.append(pos[i])
             res.append(neg[i])
 
