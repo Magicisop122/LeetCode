@@ -1,6 +1,8 @@
 class Solution:
     def subarraySum(self, nums: List[int], k: int) -> int:
 
+        # optimal approach with prefix sum O(n)
+
         hashmap = {0:1}
         prefixSum = 0
         cnt = 0
