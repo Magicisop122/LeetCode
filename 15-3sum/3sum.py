@@ -1,5 +1,8 @@
 class Solution:
     def threeSum(self, nums: List[int]) -> List[List[int]]:
+
+        # O(n^2) solution 2 pointers
+        
         nums.sort()
         res = []
 
