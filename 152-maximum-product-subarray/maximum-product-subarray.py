@@ -1,5 +1,7 @@
 class Solution:
     def maxProduct(self, nums: List[int]) -> int:
+
+        # observation based 0(n)
         n = len(nums)
 
         prefix = 1
