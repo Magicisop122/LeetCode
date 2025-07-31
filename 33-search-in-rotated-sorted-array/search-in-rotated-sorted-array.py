@@ -3,13 +3,13 @@ class Solution:
 
         # linear search 
 
-        # res = -1
+        res = -1
 
-        # for i in range(len(nums)):
-        #     if nums[i] == target:
-        #         res = i
+        for i in range(len(nums)):
+            if nums[i] == target:
+                res = i
 
-        # return res
+        return res
 
         # binary search
         res = -1
