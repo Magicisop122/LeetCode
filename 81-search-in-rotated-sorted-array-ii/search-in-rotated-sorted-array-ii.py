@@ -11,17 +11,44 @@ class Solution:
         # return res
 
         # 
-        nums.sort()
-        l, r = 0, len(nums) - 1
+        # nums.sort()
+        # l, r = 0, len(nums) - 1
 
+        # while l <= r:
+        #     mid = l + (r - l) // 2
+        #     if nums[mid] == target:
+        #         return True
+        #     elif nums[mid] > target:
+        #         r = mid - 1
+        #     else:
+        #         l = mid + 1
+        
+        # return False
+
+        # binary
+
+        
+
+        l, r = 0, len(nums) - 1
         while l <= r:
             mid = l + (r - l) // 2
             if nums[mid] == target:
                 return True
-            elif nums[mid] > target:
-                r = mid - 1
+                
+            if nums[l] == nums[mid] == nums[r]:
+                l += 1
+                r -= 1
+            elif nums[mid] >= nums[l]:
+                if target <= nums[mid] and target >= nums[l]:
+                    r = mid - 1
+                else:
+                    l = mid + 1
+                
             else:
-                l = mid + 1
-        
+                if target >= nums[mid] and target <= nums[r]:
+                    l = mid + 1
+                else:
+                    r = mid - 1
+                
         return False
         
