@@ -38,6 +38,7 @@ class Solution:
                         l = mid + 1
                 
                 else:
+                    # its odd
                     if nums[mid] == nums[mid - 1]:
                         l = mid + 1
                     else:
