@@ -1,6 +1,8 @@
 class Solution:
     def minEatingSpeed(self, piles: List[int], h: int) -> int:
 
+        # binary search
+
         low, high = 1, max(piles)
 
         result = high
