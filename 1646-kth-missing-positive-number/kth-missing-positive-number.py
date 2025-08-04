@@ -3,7 +3,7 @@ class Solution:
 
         
 
-        for i in range(0, len(arr)):
+        for i in range(len(arr)):
             if arr[i] <= k:
                 k += 1
             else:
