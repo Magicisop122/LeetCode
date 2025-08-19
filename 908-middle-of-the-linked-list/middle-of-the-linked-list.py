@@ -21,9 +21,10 @@ class Solution:
         while temp != None:
             mid -= 1
             if mid == 0:
-                return temp
-            else:
-                temp = temp.next
+                break
+            temp = temp.next
+
+        return temp
 
         # 
         
