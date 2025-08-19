@@ -6,23 +6,39 @@
 class Solution:
     def reverseList(self, head: Optional[ListNode]) -> Optional[ListNode]:
 
-        if not head:
-            return None
+        # extra memory
 
-        temp = head
-        stack = []
+        # if not head:
+        #     return None
 
-        while temp != None:
-            stack.append(temp.val)
-            temp = temp.next
+        # temp = head
+        # stack = []
 
-        temp = head
+        # while temp != None:
+        #     stack.append(temp.val)
+        #     temp = temp.next
 
-        while temp != None:
-            temp.val = stack.pop()
-            temp = temp.next
+        # temp = head
 
-        return head
+        # while temp != None:
+        #     temp.val = stack.pop()
+        #     temp = temp.next
+
+        # return head
+
+        # iterative
+
+        prev, curr = None, head
+
+        while curr:
+            temp = curr.next
+            curr.next = prev
+            prev = curr
+            curr = temp
+        return prev
+
+
+
             
 
 
