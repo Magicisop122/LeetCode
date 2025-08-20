@@ -7,17 +7,38 @@
 class Solution:
     def detectCycle(self, head: Optional[ListNode]) -> Optional[ListNode]:
 
-        hashmap = {}
+        # brute force O(n) space
 
-        curr = head
+        # hashmap = {}
 
-        while curr != None:
-            if curr in hashmap:
-                return curr
+        # curr = head
 
-            hashmap[curr] = 1
+        # while curr != None:
+        #     if curr in hashmap:
+        #         return curr
 
-            curr = curr.next
+        #     hashmap[curr] = 1
+
+        #     curr = curr.next
+
+        # return None
+
+        # optimal approach tortoise and hare method
+
+        slow, fast = head, head
+
+        while fast != None and fast.next != None:
+            slow = slow.next
+            fast = fast.next.next
+
+            if slow == fast:
+                slow = head
+                while slow != fast:
+                    slow = slow.next 
+                    fast = fast.next
+                return slow
+                    
 
         return None
+
         
