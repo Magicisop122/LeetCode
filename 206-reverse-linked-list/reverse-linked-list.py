@@ -28,17 +28,18 @@ class Solution:
 
         # iterative
 
-        prev, curr = None, head
+        temp, prev = head, None
 
-        while curr:
-            temp = curr.next
-            curr.next = prev
-            prev = curr
-            curr = temp
+        while temp != None:
+            front = temp.next
+            temp.next = prev
+            prev = temp
+            temp = front
 
         return prev
 
-        
+
+
 
 
             
