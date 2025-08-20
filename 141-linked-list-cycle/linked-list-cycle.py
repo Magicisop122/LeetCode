@@ -6,14 +6,31 @@
 
 class Solution:
     def hasCycle(self, head: Optional[ListNode]) -> bool:
-        slow, fast = head, head
 
-        while fast != None and fast.next != None:
-            slow = slow.next
-            fast = fast.next.next
+        # hashmap solution with O(n) memory
 
-            if slow == fast:
+        hashmap = {}
+
+        temp = head
+
+        while temp != None:
+            if temp in hashmap:
                 return True
-
+            
+            hashmap[temp] = 1
+            temp = temp.next
+        
         return False
+
+
+        # slow, fast = head, head
+
+        # while fast != None and fast.next != None:
+        #     slow = slow.next
+        #     fast = fast.next.next
+
+        #     if slow == fast:
+        #         return True
+
+        # return False
         
