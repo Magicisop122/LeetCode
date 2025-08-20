@@ -8,35 +8,35 @@ class Solution:
 
         # extra memory
 
-        # if not head:
-        #     return None
+        if not head:
+            return None
 
-        # temp = head
-        # stack = []
+        temp = head
+        stack = []
 
-        # while temp != None:
-        #     stack.append(temp.val)
-        #     temp = temp.next
+        while temp != None:
+            stack.append(temp.val)
+            temp = temp.next
 
-        # temp = head
+        temp = head
 
-        # while temp != None:
-        #     temp.val = stack.pop()
-        #     temp = temp.next
+        while temp != None:
+            temp.val = stack.pop()
+            temp = temp.next
 
-        # return head
+        return head
 
         # # iterative
 
-        # temp, prev = head, None
+        temp, prev = head, None
 
-        # while temp != None:
-        #     front = temp.next
-        #     temp.next = prev
-        #     prev = temp
-        #     temp = front
+        while temp != None:
+            front = temp.next
+            temp.next = prev
+            prev = temp
+            temp = front
 
-        # return prev
+        return prev
 
         # recursive
 
