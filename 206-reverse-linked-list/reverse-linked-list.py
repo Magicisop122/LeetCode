@@ -26,17 +26,34 @@ class Solution:
 
         # return head
 
-        # iterative
+        # # iterative
 
-        temp, prev = head, None
+        # temp, prev = head, None
 
-        while temp != None:
-            front = temp.next
-            temp.next = prev
-            prev = temp
-            temp = front
+        # while temp != None:
+        #     front = temp.next
+        #     temp.next = prev
+        #     prev = temp
+        #     temp = front
 
-        return prev
+        # return prev
+
+        # recursive
+
+        def reverse(head):
+            if head == None or head.next == None:
+                return head
+
+            newHead = reverse(head.next)
+
+            front = head.next
+            front.next = head
+            head.next = None
+
+            return newHead
+
+        return reverse(head)
+
 
 
 
