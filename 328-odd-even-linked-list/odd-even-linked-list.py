@@ -14,18 +14,19 @@ class Solution:
         temp = head
 
         while temp != None:
-            new.append(temp)
+            new.append(temp.val)
             temp = temp.next.next if temp.next else None
 
         temp = head.next
 
         while temp != None:
-            new.append(temp)
+            new.append(temp.val)
             temp = temp.next.next if temp.next else None
 
         
-        for i in range(len(new) - 1):
-            new[i].next = new[i + 1]
-        new[-1].next = None
-
-        return new[0]
+        temp = head
+        for i in range(len(new)):
+            temp.val = new[i]
+            temp = temp.next
+        
+        return head
