@@ -26,6 +26,6 @@ class Solution:
                 break
             temp = temp.next
 
-        delNode = temp.next
+        # delNode = temp.next
         temp.next = temp.next.next
         return head
