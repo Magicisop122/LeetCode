@@ -22,15 +22,17 @@ class Solution:
         
         return False
 
+        # tortoise and hare method optimal
 
-        # slow, fast = head, head
 
-        # while fast != None and fast.next != None:
-        #     slow = slow.next
-        #     fast = fast.next.next
+        slow, fast = head, head
 
-        #     if slow == fast:
-        #         return True
+        while fast != None and fast.next != None:
+            slow = slow.next
+            fast = fast.next.next
 
-        # return False
+            if slow == fast:
+                return True
+
+        return False
         
