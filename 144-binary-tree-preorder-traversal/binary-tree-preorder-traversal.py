@@ -7,19 +7,20 @@
 class Solution:
     def preorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
 
+        # recursion
+
         if not root:
             return []
-
         res = []
-
-        def dfs(node):
-            if not node:
+        
+        def dfs(root):
+            if not root:
                 return
-            res.append(node.val)
-            dfs(node.left)
-            dfs(node.right)
-
+            res.append(root.val)
+            dfs(root.left)
+            dfs(root.right)
         dfs(root)
+        
         return res
 
         
