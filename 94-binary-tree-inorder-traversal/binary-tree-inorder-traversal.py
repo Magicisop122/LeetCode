@@ -7,32 +7,18 @@
 class Solution:
     def inorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
 
-        # recursive solution
-
-        # res = []
-
-        # def inorder(root):
-        #     if root is None:
-        #         return
-        #     inorder(root.left)
-        #     res.append(root.val)
-        #     inorder(root.right)
-        
-        # inorder(root)
-        # return res
-     
-        # inorder traversal
+        if not root:
+            return []
 
         res = []
-        stack = []
-        curr = root
+        def dfs(root):
+            if not root:
+                return
+            
+            dfs(root.left)
+            res.append(root.val)
+            dfs(root.right)
 
-        while stack or curr:
-            while curr:
-                stack.append(curr)
-                curr = curr.left
-            curr = stack.pop()
-            res.append(curr.val)
-            curr = curr.right
-        
+        dfs(root)
         return res
+        
