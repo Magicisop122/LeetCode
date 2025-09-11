@@ -9,18 +9,38 @@ class Solution:
 
         # recursion
 
+        # if not root:
+        #     return []
+        # res = []
+        
+        # def dfs(root):
+        #     if not root:
+        #         return
+        #     res.append(root.val)
+        #     dfs(root.left)
+        #     dfs(root.right)
+        # dfs(root)
+        
+        # return res
+
+
+        # iterative
         if not root:
             return []
+
+            
         res = []
-        
-        def dfs(root):
-            if not root:
-                return
-            res.append(root.val)
-            dfs(root.left)
-            dfs(root.right)
-        dfs(root)
-        
+        stack = [root]
+        while stack:
+            curr = stack.pop()
+            res.append(curr.val)
+
+            if curr.right:
+                stack.append(curr.right)
+            
+            if curr.left:
+                stack.append(curr.left)
+
         return res
 
         
