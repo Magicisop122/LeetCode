@@ -7,10 +7,10 @@
 class Solution:
     def maxDepth(self, root: Optional[TreeNode]) -> int:
         # recursive
-        # if not root:
-        #     return 0
+        if not root:
+            return 0
 
-        # return 1 + max(self.maxDepth(root.left), self.maxDepth(root.right))
+        return 1 + max(self.maxDepth(root.left), self.maxDepth(root.right))
 
         # BFS
         if not root:
@@ -30,6 +30,23 @@ class Solution:
             level += 1
 
         return level
+
+        # pre order dfs
+
+        if not root:
+            return 0
+        
+        stack = [[root, 1]]
+        res = 1
+
+        while stack:
+            node, depth = stack.pop()
+            
+            if node:
+                res = max(res, depth)
+                stack.append([node.left, 1 + depth])
+                stack.append([node.right, 1 + depth])
+        return res
 
 
         
