@@ -8,4 +8,16 @@ class Solution:
     def countNodes(self, root: Optional[TreeNode]) -> int:
         if not root:
             return 0
-        return 1 + self.countNodes(root.left) + self.countNodes(root.right)
+        res = 0
+
+        q = deque([root])
+
+        while q:
+            node =q.popleft()
+            res += 1
+
+            if node.left:
+                q.append(node.left)
+            if node.right:
+                q.append(node.right)
+        return res        
