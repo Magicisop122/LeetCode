@@ -6,35 +6,31 @@
 #         self.right = right
 class Solution:
     def countNodes(self, root: Optional[TreeNode]) -> int:
+        
+        # Binary Search
         if not root:
             return 0
+
+        def leftHeight(node):
+            h = 0
+            while node:
+                h += 1
+                node = node.left
+            return h
         
-        # BFS
-        # res = 0
+        def rightHeight(node):
+            h = 0
+            while node:
+                h += 1
+                node = node.right
+            return h
+        
+        lh = leftHeight(root)
+        rh = rightHeight(root)
 
-        # q = deque([root])
+        if lh == rh:
+            return (2 ** lh) - 1
 
-        # while q:
-        #     node =q.popleft()
-        #     res += 1
+        return 1 + self.countNodes(root.left) + self.countNodes(root.right)
 
-        #     if node.left:
-        #         q.append(node.left)
-        #     if node.right:
-        #         q.append(node.right)
-        # return res        
 
-        # DFS
-        res = 0
-        stack = [root]
-
-        while stack:
-            node = stack.pop()
-            res += 1
-
-            if node.left:
-                stack.append(node.left)
-            if node.right:
-                stack.append(node.right)
-
-        return res
