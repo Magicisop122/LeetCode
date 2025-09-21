@@ -26,3 +26,7 @@ class Solution:
                 q.append([node.right, 2 * num + 1, level + 1])
 
         return res       
+        
+        
+
+        
