@@ -1,6 +1,9 @@
 class Solution:
     def generate(self, numRows: int) -> List[List[int]]:
 
+        # time complexity will be O(n * n)
+        # if we are considering the output space then it will be 
+
         res = [[1]]
 
         for i in range(numRows - 1):
