@@ -1,18 +1,20 @@
 class Solution:
     def isAnagram(self, s: str, t: str) -> bool:
-        # return sorted(s) == sorted(t)
+        # if len(s) != len(t):
+        #     return False
+        
+        # countS, countT = {}, {}
 
-        if len(s) != len(t):
-            return False
+        # for i in range(len(s)):
+        #     countS[s[i]] = 1 + countS.get(s[i], 0)
+        #     countT[t[i]] = 1 + countT.get(t[i], 0)
 
-        mapS, mapT = {}, {}
-
-        for i in range(len(s)):
-            mapS[s[i]] = 1 + mapS.get(s[i], 0)
-            mapT[t[i]] = 1 + mapT.get(t[i], 0)
-
-        return mapS == mapT
-
+        # for c in countS:
+        #     if countS[c] != countT.get(c, 0):
+        #         return False
+        # return True
+        
+        return sorted(s) == sorted(t)
 
             
         
