@@ -1,5 +1,6 @@
 class Solution:
     def isPalindrome(self, s: str) -> bool:
+        # Functional recursion
 
         # newS = ''.join(c.lower() for c in s if c.isalnum())
 
@@ -25,15 +26,16 @@ class Solution:
 
         # return c == c[::-1]
 
-        newS = ''.join(c.lower() for c in s if c.isalnum())
+        # 2 Pointers
 
+        newS = ''.join(c.lower() for c in s if c.isalnum())
         l, r = 0, len(newS) - 1
 
         while l <= r:
             if newS[l] != newS[r]:
                 return False
-            else:
-                l += 1
-                r -= 1
+            
+            l += 1
+            r -= 1
         
         return True
