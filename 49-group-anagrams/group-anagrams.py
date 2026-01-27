@@ -2,13 +2,13 @@ class Solution:
     def groupAnagrams(self, strs: List[str]) -> List[List[str]]:
         # sorting solution
 
-        anagrams = defaultdict(list)
+        # anagrams = defaultdict(list)
 
-        for word in strs:
-            key = "".join(sorted(word))
-            anagrams[key].append(word)
+        # for word in strs:
+        #     key = "".join(sorted(word))
+        #     anagrams[key].append(word)
 
-        return list(anagrams.values())
+        # return list(anagrams.values())
 
         # hashmap solution
 
@@ -19,7 +19,7 @@ class Solution:
 
             for c in s:
                 count[ord(c) - ord("a")] += 1
-
+            
             result[tuple(count)].append(s)
 
         return list(result.values())
