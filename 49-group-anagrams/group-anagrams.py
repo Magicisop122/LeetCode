@@ -19,8 +19,9 @@ class Solution:
 
             for c in s:
                 count[ord(c) - ord("a")] += 1
-            
+
             result[tuple(count)].append(s)
 
         return list(result.values())
+
         
