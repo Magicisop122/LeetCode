@@ -1,8 +1,6 @@
 class Solution:
     def maxArea(self, height: List[int]) -> int:
-
-        # brute force
-
+        # brute force which gives TLE
         # res = 0
 
         # for l in range(len(height)):
@@ -11,30 +9,20 @@ class Solution:
         #         res = max(res, area)
 
         # return res
-
-        # two pointers
-
+        
         res = 0
 
         l, r = 0, len(height) - 1
 
-        while l <= r:
+        while l < r:
             area = (r - l) * min(height[l], height[r])
             res = max(res, area)
 
             if height[l] < height[r]:
                 l += 1
-            else:
+            elif height[l] > height[r]:
                 r -= 1
-
+            else:
+                l += 1
+        
         return res
-
-        
-
-
-
-    
-        
-
-
-        
