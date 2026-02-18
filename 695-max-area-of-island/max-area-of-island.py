@@ -15,6 +15,9 @@ class Solution:
                         dfs(r, c + 1) +
                         dfs(r, c - 1))
         
+
+
+        
         area = 0
         for r in range(ROWS):
             for c in range(COLS):
