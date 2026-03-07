@@ -15,15 +15,14 @@ class Solution:
 
         # # kadane's algo
 
+        maxSum = nums[0]
         curSum = 0
-        res = float('-inf')
 
-        for i in range(len(nums)):
-            curSum += nums[i]
-            res = max(res, curSum)
+        for n in nums:
             if curSum < 0:
                 curSum = 0
+            curSum += n
+            maxSum = max(maxSum, curSum)
 
-        return res 
-
+        return maxSum
         
