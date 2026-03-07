@@ -17,6 +17,4 @@ class Solution:
                 curr = curr.left
             else:
                 return curr
-                
-        
         
