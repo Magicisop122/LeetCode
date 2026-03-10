@@ -7,32 +7,20 @@
 class Solution:
     def hasCycle(self, head: Optional[ListNode]) -> bool:
 
-        # hashmap solution with O(n) memory
-
-        hashmap = {}
-
-        temp = head
-
-        while temp != None:
-            if temp in hashmap:
-                return True
-            
-            hashmap[temp] = 1
-            temp = temp.next
-        
-        return False
-
-        # tortoise and hare method optimal
-
-
         slow, fast = head, head
 
-        while fast != None and fast.next != None:
+        while fast and fast.next != None:
             slow = slow.next
             fast = fast.next.next
-
             if slow == fast:
                 return True
 
         return False
+
+        
+        
+
+
+
+            
         
