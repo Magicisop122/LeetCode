@@ -3,6 +3,7 @@ class MyQueue:
     def __init__(self):
         self.s1 = []
         self.s2 = []
+        
 
     def push(self, x: int) -> None:
         self.s1.append(x)
@@ -14,6 +15,7 @@ class MyQueue:
                 self.s2.append(self.s1.pop())
         return self.s2.pop()
         
+        
 
     def peek(self) -> int:
         if not self.s2:
@@ -22,7 +24,10 @@ class MyQueue:
         return self.s2[-1]
 
     def empty(self) -> bool:
-        return max(len(self.s1), len(self.s2)) == 0
+        if not self.s1 and not self.s2:
+            return True
+        else:
+            return False
         
 
 
